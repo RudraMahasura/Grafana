@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  roles:
+  # Running common tasks
+    - common  
+  # Installing Grafana as a role
+    - grafana
+  post_tasks:
+  - include: roles/grafana/handlers/main.yml
